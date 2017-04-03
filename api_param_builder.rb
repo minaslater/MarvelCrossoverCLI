@@ -12,4 +12,8 @@ class APIParamBuilder
   def encrypt_keys
     Digest::MD5.hexdigest(@ts.to_s + PRIVATE_KEY + PUBLIC_KEY)
   end
+
+  def to_s
+    "apikey=#{PUBLIC_KEY}&hash=#{hash}&ts=#{ts}"
+  end
 end
