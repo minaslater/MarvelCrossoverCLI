@@ -15,6 +15,6 @@ class URLBuilder
 
   def build
     params = APIParamBuilder.new
-    "https://gateway.marvel.com/v1/public/characters?" + params.to_s + character_to_s
+    "http://gateway.marvel.com/v1/public/characters?" + params.to_s + character_to_s
   end
 end
