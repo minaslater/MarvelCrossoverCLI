@@ -1,13 +1,13 @@
 require "json"
 
 class Parser
-  attr_reader :json_body
+  # attr_reader :json
+  #
+  # def initialize(json)
+  #   @json = json
+  # end
 
-  def initialize(json_body)
-    @json_body = json_body
-  end
-
-  def to_hash
-    JSON.parse(json_body)
+  def to_hash(json)
+    JSON.parse(json.body)
   end
 end
