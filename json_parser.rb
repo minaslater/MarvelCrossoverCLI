@@ -8,7 +8,6 @@ class Parser
   # end
 
   def to_hash(json)
-    json_body = json.body
-    JSON.parse(json_body)
+    JSON.parse(json.body)
   end
 end
