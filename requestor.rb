@@ -10,9 +10,15 @@ class Requestor
     http.request(request)
   end
 
-  def request(input)
-    builder = URLBuilder.new(input)
-    url = builder.build
+  def request_id(input)
+    builder = URLBuilder.new
+    url = builder.build_with_name(input)
+    fetch!(url)
+  end
+
+  def request_comic(id1, id2)
+    builder = URLBuilder.new
+    url = builder.build_with_ids(id1, id2)
     fetch!(url)
   end
 end
