@@ -23,15 +23,11 @@ class CrossoverParser < Parser
 
   def find_creative_team
     creative_team = {}
-    # number = comic_data["data"]["results"][0]["creators"]["available"]
-    # count = 0
-    # while count < number
     team_members = comic_data["data"]["results"][0]["creators"]["items"]
     team_members.each do |hash|
       job = hash["role"]
       name = hash["name"]
       creative_team[job] = name
-      # count += 1
     end
     creative_team
   end
