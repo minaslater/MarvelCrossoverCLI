@@ -1,8 +1,9 @@
 require_relative "requestor"
 require_relative "character_parser"
+require_relative "crossover_parser"
 
 class MarvelCLIController
-  attr_reader :requestor, :character_parser
+  attr_reader :requestor, :character_parser, :comic_parser
 
   def initialize
     character1 = "Captain America"
@@ -18,6 +19,7 @@ class MarvelCLIController
     # compare comic appearances with another API request by id
     comic_json = requestor.request_comic(id1, id2)
     # output matches
+    @comic_parser = CrossoverParser.new(comic_json)
   end
 end
 
